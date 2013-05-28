@@ -12,6 +12,11 @@ This project uses Travis for continuous integration: [![Build Status](https://se
 ChangeLog
 ---------
 
+### 0.3.0
+
+* Added: Support for custom `DJANGO_FIELDS_SECRET_KEY` setting, which defaults to `settings.SECRET_KEY[:32]` if not explicitly defined.
+* Changed: All encryption now defaults to `AES.MODE_CBC`. **THIS IS A BACKWARDS INCOMPATIBLE CHANGE**. All data encrypted with previous versions of this application must be dumped **prior to upgrade** and re-imported after.
+
 ### 0.2.0
 
 * Added: Class `django_fields.models.ModelWithPrivateFields`, which allows to use private fields, starting from two underscores.
